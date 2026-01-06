@@ -1,0 +1,190 @@
+################################################################################
+# SERVICES
+################################################################################
+
+
+services:
+
+  # ----------------------------------------------------------------------------
+  # PostgreSQL Database backend for daisy scout
+  # https://neon.tech/guides/local-development-with-neon
+  # ----------------------------------------------------------------------------
+  team341-2025-scouting-pg-db:
+    container_name: team341-2025-scouting-pg-db
+    build:
+      context: .\daisy_scout_web\db
+      dockerfile: Dockerfile
+    command: '-d 1'
+    volumes:
+       # ensure the databases are on a docker volume to exist across container 
+       # lifecycles...
+      - team341-2025-pg-db-vol:/var/lib/postgresql/data
+      # - ./dataset:/docker-entrypoint-initdb.d
+  
+      # map script to allow backup/restore
+      - ./daisy_scout_web/db/transfer/load:/transfer-in
+      - ./daisy_scout_web/db/transfer/extract:/transfer-out
+
+    ports:
+      - '5435:5432'
+
+    env_file: 
+     - 'daisy_scout_web/.env'
+    # environment: 
+    #   - POSTGRES_USER=postgres
+    #   - POSTGRES_PASSWORD=postgres
+    #   - POSTGRES_DB=main
+
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U neondb_owner -d neondb']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+    networks:
+      team341-2025-scouting-net:
+  # ----------------------------------------------------------------------------
+  # neon proxy to postgresql for daisy scout
+  # https://neon.tech/guides/local-development-with-neon
+  # ----------------------------------------------------------------------------
+  team341-2025-scouting-neon-proxy:
+    container_name: team341-2025-scouting-neon-proxy
+    image: ghcr.io/timowilhelm/local-neon-http-proxy:main
+    environment:
+      - PG_CONNECTION_STRING=postgres://neondb_owner:9MkEPxmi5JOv@team341-2025-scouting-pg-db:5432/neondb
+    ports:
+      - '4444:4444'
+    depends_on:
+      team341-2025-scouting-pg-db:
+        condition: service_healthy
+
+    networks:
+      team341-2025-scouting-net:
+
+  team341-2025-scouting-pgadmin:
+    container_name: team341-2025-scouting-pgadmin
+    image: dpage/pgadmin4:8.14
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+
+      # note, use team341-2025-scouting-pg-db in container in the docker network.
+    volumes:
+       - pgadmin:/var/lib/pgadmin
+
+    ports:
+      - "${PGADMIN_PORT:-5050}:80"
+
+    depends_on:
+      team341-2025-scouting-pg-db:
+        condition: service_healthy
+
+    networks:
+      team341-2025-scouting-net:
+
+    restart: unless-stopped
+
+    
+  # ----------------------------------------------------------------------------
+  # Scouting API
+  # ----------------------------------------------------------------------------
+  team341-2025-scouting-api:
+    container_name: team341-2025-scouting-api
+
+    # build docker image for DB Container
+    # required to mask project ENV variables to those supported by the mysql 
+    # container build process...
+    build:
+      context: .\daisy_scout_web
+      dockerfile: Dockerfile
+
+    # allow container access outside of the container for easier development
+    ports: 
+     - 8080:8080
+
+    depends_on:
+      team341-2025-scouting-neon-proxy:
+        condition: service_started
+
+    #volumes:
+      #- ./daisy_scout_web:/app
+      #- ./daisy_scout_web/app:/app/app
+      #- ./daisy_scout_web/db:/app/db
+      #- ./daisy_scout_web/public:/app/public
+
+    environment:
+      # limit what host this instance can connect to...
+      # PMA_HOST: team341-2025-scouting-db
+      NEON_PROXY_HOST: team341-2025-scouting-neon-proxy
+
+    # Set environment variables based on the .env file
+    env_file: 
+     - 'daisy_scout_web/.env'
+
+    restart: no
+
+    # use named known network in docker
+    networks:
+      team341-2025-scouting-net:
+
+    profiles: ['Web']
+
+
+ # ----------------------------------------------------------------------------
+  # Scanner Tool
+  # ----------------------------------------------------------------------------
+  team341-2025-scouting-tablet:
+    container_name: team341-2025-scouting-tablet
+ 
+    # build docker image for DB Container
+    # required to mask project ENV variables to those supported by the mysql 
+    # container build process...
+    build:
+      context: .
+      dockerfile: ./daisy_scout_tablet/Dockerfile
+
+    # allow MySQL access outside of the container for easier development
+    ports: 
+     - 8090:80
+
+    #volumes:
+    #   - ./daisy_scout_tablet/:/project/
+       
+
+    #entrypoint: 
+    #  flutter-web
+
+    # use named known network in docker
+    networks:
+      team341-2025-scouting-net:
+
+    profiles: ['Scanner']
+
+################################################################################
+# Volumes
+################################################################################
+volumes:
+
+  # ----------------------------------------------------------------------------
+  # PostgreSQL Database data volume - allows the database to continue to exist 
+  # with container restarts
+  # ----------------------------------------------------------------------------
+  team341-2025-pg-db-vol:
+    #external: true
+    name: team341-pg-db-vol
+
+  pgadmin:
+    name: team341-pgadmin
+
+
+################################################################################
+# NETWORK
+################################################################################
+networks:
+
+  # ----------------------------------------------------------------------------
+  # setup named known network in docker (like a VPC)
+  # ----------------------------------------------------------------------------
+  team341-2025-scouting-net:
+    driver: bridge

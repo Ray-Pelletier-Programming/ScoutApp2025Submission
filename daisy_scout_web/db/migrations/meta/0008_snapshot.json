@@ -1,0 +1,3024 @@
+{
+  "id": "486f0b82-0cd5-42f5-8bb0-8cb67c0b406c",
+  "prevId": "61fa9271-1678-4cf1-8c5f-83f41e854388",
+  "version": "7",
+  "dialect": "postgresql",
+  "tables": {
+    "public.EventMatchTeams2025Result": {
+      "name": "EventMatchTeams2025Result",
+      "schema": "",
+      "columns": {
+        "Event_Match_Id": {
+          "name": "Event_Match_Id",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Alliance_Color": {
+          "name": "Alliance_Color",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Alliance_Position": {
+          "name": "Alliance_Position",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Leave": {
+          "name": "Leave",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Endgame": {
+          "name": "Endgame",
+          "type": "varchar(15)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Created_At": {
+          "name": "Created_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "Updated_At": {
+          "name": "Updated_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "Synced_At": {
+          "name": "Synced_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "idx_u_eventmatchteams2025result": {
+          "name": "idx_u_eventmatchteams2025result",
+          "columns": [
+            {
+              "expression": "Event_Match_Id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Alliance_Color",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Alliance_Position",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "EventMatchTeams2025Result_Event_Match_Id_EventMatches_Event_Match_Id_fk": {
+          "name": "EventMatchTeams2025Result_Event_Match_Id_EventMatches_Event_Match_Id_fk",
+          "tableFrom": "EventMatchTeams2025Result",
+          "tableTo": "EventMatches",
+          "columnsFrom": [
+            "Event_Match_Id"
+          ],
+          "columnsTo": [
+            "Event_Match_Id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.EventMatches2025Result": {
+      "name": "EventMatches2025Result",
+      "schema": "",
+      "columns": {
+        "Event_Match_Id": {
+          "name": "Event_Match_Id",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Alliance_Color": {
+          "name": "Alliance_Color",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L4_A": {
+          "name": "Auto_L4_A",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L4_B": {
+          "name": "Auto_L4_B",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L4_C": {
+          "name": "Auto_L4_C",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L4_D": {
+          "name": "Auto_L4_D",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L4_E": {
+          "name": "Auto_L4_E",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L4_F": {
+          "name": "Auto_L4_F",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L4_G": {
+          "name": "Auto_L4_G",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L4_H": {
+          "name": "Auto_L4_H",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L4_I": {
+          "name": "Auto_L4_I",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L4_J": {
+          "name": "Auto_L4_J",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L4_K": {
+          "name": "Auto_L4_K",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L4_L": {
+          "name": "Auto_L4_L",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L3_A": {
+          "name": "Auto_L3_A",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L3_B": {
+          "name": "Auto_L3_B",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L3_C": {
+          "name": "Auto_L3_C",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L3_D": {
+          "name": "Auto_L3_D",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L3_E": {
+          "name": "Auto_L3_E",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L3_F": {
+          "name": "Auto_L3_F",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L3_G": {
+          "name": "Auto_L3_G",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L3_H": {
+          "name": "Auto_L3_H",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L3_I": {
+          "name": "Auto_L3_I",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L3_J": {
+          "name": "Auto_L3_J",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L3_K": {
+          "name": "Auto_L3_K",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L3_L": {
+          "name": "Auto_L3_L",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L2_A": {
+          "name": "Auto_L2_A",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L2_B": {
+          "name": "Auto_L2_B",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L2_C": {
+          "name": "Auto_L2_C",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L2_D": {
+          "name": "Auto_L2_D",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L2_E": {
+          "name": "Auto_L2_E",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L2_F": {
+          "name": "Auto_L2_F",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L2_G": {
+          "name": "Auto_L2_G",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L2_H": {
+          "name": "Auto_L2_H",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L2_I": {
+          "name": "Auto_L2_I",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L2_J": {
+          "name": "Auto_L2_J",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L2_K": {
+          "name": "Auto_L2_K",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L2_L": {
+          "name": "Auto_L2_L",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_L1": {
+          "name": "Auto_L1",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_Coral_Count": {
+          "name": "Auto_Coral_Count",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_Mobility_Points": {
+          "name": "Auto_Mobility_Points",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_Points": {
+          "name": "Auto_Points",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_Coral_Points": {
+          "name": "Auto_Coral_Points",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L4_A": {
+          "name": "Teleop_L4_A",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L4_B": {
+          "name": "Teleop_L4_B",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L4_C": {
+          "name": "Teleop_L4_C",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L4_D": {
+          "name": "Teleop_L4_D",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L4_E": {
+          "name": "Teleop_L4_E",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L4_F": {
+          "name": "Teleop_L4_F",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L4_G": {
+          "name": "Teleop_L4_G",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L4_H": {
+          "name": "Teleop_L4_H",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L4_I": {
+          "name": "Teleop_L4_I",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L4_J": {
+          "name": "Teleop_L4_J",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L4_K": {
+          "name": "Teleop_L4_K",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L4_L": {
+          "name": "Teleop_L4_L",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L3_A": {
+          "name": "Teleop_L3_A",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L3_B": {
+          "name": "Teleop_L3_B",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L3_C": {
+          "name": "Teleop_L3_C",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L3_D": {
+          "name": "Teleop_L3_D",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L3_E": {
+          "name": "Teleop_L3_E",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L3_F": {
+          "name": "Teleop_L3_F",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L3_G": {
+          "name": "Teleop_L3_G",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L3_H": {
+          "name": "Teleop_L3_H",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L3_I": {
+          "name": "Teleop_L3_I",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L3_J": {
+          "name": "Teleop_L3_J",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L3_K": {
+          "name": "Teleop_L3_K",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L3_L": {
+          "name": "Teleop_L3_L",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L2_A": {
+          "name": "Teleop_L2_A",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L2_B": {
+          "name": "Teleop_L2_B",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L2_C": {
+          "name": "Teleop_L2_C",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L2_D": {
+          "name": "Teleop_L2_D",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L2_E": {
+          "name": "Teleop_L2_E",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L2_F": {
+          "name": "Teleop_L2_F",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L2_G": {
+          "name": "Teleop_L2_G",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L2_H": {
+          "name": "Teleop_L2_H",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L2_I": {
+          "name": "Teleop_L2_I",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L2_J": {
+          "name": "Teleop_L2_J",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L2_K": {
+          "name": "Teleop_L2_K",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L2_L": {
+          "name": "Teleop_L2_L",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_L1": {
+          "name": "Teleop_L1",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_Coral_Count": {
+          "name": "Teleop_Coral_Count",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_Points": {
+          "name": "Teleop_Points",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Teleop_Coral_Points": {
+          "name": "Teleop_Coral_Points",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Algae_Points": {
+          "name": "Algae_Points",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Net_Algae_Count": {
+          "name": "Net_Algae_Count",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Wall_Algae_Count": {
+          "name": "Wall_Algae_Count",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Endgame_Barge_Points": {
+          "name": "Endgame_Barge_Points",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_Bonus_Achieved": {
+          "name": "Auto_Bonus_Achieved",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Coral_Bonus_Achieved": {
+          "name": "Coral_Bonus_Achieved",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Barge_Bonus_Achieved": {
+          "name": "Barge_Bonus_Achieved",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Coopertition_Criteria_Met": {
+          "name": "Coopertition_Criteria_Met",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Foul_Count": {
+          "name": "Foul_Count",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "G206_Penalty": {
+          "name": "G206_Penalty",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "G410_Penalty": {
+          "name": "G410_Penalty",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "G418_Penalty": {
+          "name": "G418_Penalty",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "G428_Penalty": {
+          "name": "G428_Penalty",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Anjust_Points": {
+          "name": "Anjust_Points",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Foul_Points": {
+          "name": "Foul_Points",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "RP": {
+          "name": "RP",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Total_Points": {
+          "name": "Total_Points",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Created_At": {
+          "name": "Created_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "Updated_At": {
+          "name": "Updated_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "Synced_At": {
+          "name": "Synced_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "idx_u_eventmatches2025result": {
+          "name": "idx_u_eventmatches2025result",
+          "columns": [
+            {
+              "expression": "Event_Match_Id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Alliance_Color",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "EventMatches2025Result_Event_Match_Id_EventMatches_Event_Match_Id_fk": {
+          "name": "EventMatches2025Result_Event_Match_Id_EventMatches_Event_Match_Id_fk",
+          "tableFrom": "EventMatches2025Result",
+          "tableTo": "EventMatches",
+          "columnsFrom": [
+            "Event_Match_Id"
+          ],
+          "columnsTo": [
+            "Event_Match_Id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.Casino2025Data": {
+      "name": "Casino2025Data",
+      "schema": "",
+      "columns": {
+        "Event_Id": {
+          "name": "Event_Id",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Match_Type": {
+          "name": "Match_Type",
+          "type": "varchar(15)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Match_Number": {
+          "name": "Match_Number",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Source": {
+          "name": "Source",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Scout_Name": {
+          "name": "Scout_Name",
+          "type": "varchar(40)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Bet_Color": {
+          "name": "Bet_Color",
+          "type": "varchar(4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Auto_Color": {
+          "name": "Auto_Color",
+          "type": "varchar(4)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Winner_Score_Over_Under": {
+          "name": "Winner_Score_Over_Under",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Total_Score_Over_Under": {
+          "name": "Total_Score_Over_Under",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Bet_Amount": {
+          "name": "Bet_Amount",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Created_At": {
+          "name": "Created_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "Updated_At": {
+          "name": "Updated_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "Synced_At": {
+          "name": "Synced_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "idx_u_casino2025Data": {
+          "name": "idx_u_casino2025Data",
+          "columns": [
+            {
+              "expression": "Event_Id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Match_Type",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Match_Number",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Source",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Scout_Name",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "Casino2025Data_Event_Id_Events_Event_Id_fk": {
+          "name": "Casino2025Data_Event_Id_Events_Event_Id_fk",
+          "tableFrom": "Casino2025Data",
+          "tableTo": "Events",
+          "columnsFrom": [
+            "Event_Id"
+          ],
+          "columnsTo": [
+            "Event_Id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.DoNotPickList2025": {
+      "name": "DoNotPickList2025",
+      "schema": "",
+      "columns": {
+        "Event_Id": {
+          "name": "Event_Id",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Team_Number": {
+          "name": "Team_Number",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Reason": {
+          "name": "Reason",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Created_At": {
+          "name": "Created_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "Updated_At": {
+          "name": "Updated_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "Synced_At": {
+          "name": "Synced_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "idx_u_donotpicklist2025": {
+          "name": "idx_u_donotpicklist2025",
+          "columns": [
+            {
+              "expression": "Event_Id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Team_Number",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "DoNotPickList2025_Event_Id_Events_Event_Id_fk": {
+          "name": "DoNotPickList2025_Event_Id_Events_Event_Id_fk",
+          "tableFrom": "DoNotPickList2025",
+          "tableTo": "Events",
+          "columnsFrom": [
+            "Event_Id"
+          ],
+          "columnsTo": [
+            "Event_Id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.EventMatchTeams": {
+      "name": "EventMatchTeams",
+      "schema": "",
+      "columns": {
+        "Event_Match_Id": {
+          "name": "Event_Match_Id",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Alliance_Color": {
+          "name": "Alliance_Color",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Alliance_Position": {
+          "name": "Alliance_Position",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Team_Number": {
+          "name": "Team_Number",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Created_At": {
+          "name": "Created_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "Updated_At": {
+          "name": "Updated_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "Synced_At": {
+          "name": "Synced_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "idx_u_eventMatchTeam": {
+          "name": "idx_u_eventMatchTeam",
+          "columns": [
+            {
+              "expression": "Event_Match_Id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Alliance_Color",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Alliance_Position",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "EventMatchTeams_Event_Match_Id_EventMatches_Event_Match_Id_fk": {
+          "name": "EventMatchTeams_Event_Match_Id_EventMatches_Event_Match_Id_fk",
+          "tableFrom": "EventMatchTeams",
+          "tableTo": "EventMatches",
+          "columnsFrom": [
+            "Event_Match_Id"
+          ],
+          "columnsTo": [
+            "Event_Match_Id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.EventMatches": {
+      "name": "EventMatches",
+      "schema": "",
+      "columns": {
+        "Event_Match_Id": {
+          "name": "Event_Match_Id",
+          "type": "varchar(30)",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "Event_Id": {
+          "name": "Event_Id",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Match_Type": {
+          "name": "Match_Type",
+          "type": "varchar(15)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Match_Number": {
+          "name": "Match_Number",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Scheduled_Start_Time": {
+          "name": "Scheduled_Start_Time",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Created_At": {
+          "name": "Created_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "Updated_At": {
+          "name": "Updated_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "Synced_At": {
+          "name": "Synced_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "idx_u_eventMatch": {
+          "name": "idx_u_eventMatch",
+          "columns": [
+            {
+              "expression": "Event_Id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Match_Type",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Match_Number",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "EventMatches_Event_Id_Events_Event_Id_fk": {
+          "name": "EventMatches_Event_Id_Events_Event_Id_fk",
+          "tableFrom": "EventMatches",
+          "tableTo": "Events",
+          "columnsFrom": [
+            "Event_Id"
+          ],
+          "columnsTo": [
+            "Event_Id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.EventTeams": {
+      "name": "EventTeams",
+      "schema": "",
+      "columns": {
+        "Event_Id": {
+          "name": "Event_Id",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Team_Number": {
+          "name": "Team_Number",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Created_At": {
+          "name": "Created_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "Updated_At": {
+          "name": "Updated_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "Synced_At": {
+          "name": "Synced_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "idx_u_eventteam": {
+          "name": "idx_u_eventteam",
+          "columns": [
+            {
+              "expression": "Event_Id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Team_Number",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "EventTeams_Event_Id_Events_Event_Id_fk": {
+          "name": "EventTeams_Event_Id_Events_Event_Id_fk",
+          "tableFrom": "EventTeams",
+          "tableTo": "Events",
+          "columnsFrom": [
+            "Event_Id"
+          ],
+          "columnsTo": [
+            "Event_Id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.Events": {
+      "name": "Events",
+      "schema": "",
+      "columns": {
+        "Event_Id": {
+          "name": "Event_Id",
+          "type": "varchar(20)",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "Season": {
+          "name": "Season",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Event_Code": {
+          "name": "Event_Code",
+          "type": "varchar(12)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Event_Name": {
+          "name": "Event_Name",
+          "type": "varchar(150)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Event_Type": {
+          "name": "Event_Type",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "District_Code": {
+          "name": "District_Code",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Division_Code": {
+          "name": "Division_Code",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Date_Start": {
+          "name": "Date_Start",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Date_End": {
+          "name": "Date_End",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Created_At": {
+          "name": "Created_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "Updated_At": {
+          "name": "Updated_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "Synced_At": {
+          "name": "Synced_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "idx_u_event": {
+          "name": "idx_u_event",
+          "columns": [
+            {
+              "expression": "Event_Code",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Season",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "Events_Season_Seasons_Season_fk": {
+          "name": "Events_Season_Seasons_Season_fk",
+          "tableFrom": "Events",
+          "tableTo": "Seasons",
+          "columnsFrom": [
+            "Season"
+          ],
+          "columnsTo": [
+            "Season"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.Leader2024Data": {
+      "name": "Leader2024Data",
+      "schema": "",
+      "columns": {
+        "Event_Id": {
+          "name": "Event_Id",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Match_Type": {
+          "name": "Match_Type",
+          "type": "varchar(15)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Match_Number": {
+          "name": "Match_Number",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Source": {
+          "name": "Source",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Team_Number": {
+          "name": "Team_Number",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Scout_Name": {
+          "name": "Scout_Name",
+          "type": "varchar(40)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Alliance_Color": {
+          "name": "Alliance_Color",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_Time": {
+          "name": "Auto_Time",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Driver_Ability": {
+          "name": "Driver_Ability",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Source_Time": {
+          "name": "Source_Time",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Amp_Time": {
+          "name": "Amp_Time",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Break": {
+          "name": "Break",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Class": {
+          "name": "Class",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Other_Notes": {
+          "name": "Other_Notes",
+          "type": "varchar(500)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Created_At": {
+          "name": "Created_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "Updated_At": {
+          "name": "Updated_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "Synced_At": {
+          "name": "Synced_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "idx_u_leader2024Data": {
+          "name": "idx_u_leader2024Data",
+          "columns": [
+            {
+              "expression": "Event_Id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Match_Type",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Match_Number",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Source",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Team_Number",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Scout_Name",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "Leader2024Data_Event_Id_Events_Event_Id_fk": {
+          "name": "Leader2024Data_Event_Id_Events_Event_Id_fk",
+          "tableFrom": "Leader2024Data",
+          "tableTo": "Events",
+          "columnsFrom": [
+            "Event_Id"
+          ],
+          "columnsTo": [
+            "Event_Id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.Leader2025Data": {
+      "name": "Leader2025Data",
+      "schema": "",
+      "columns": {
+        "Event_Id": {
+          "name": "Event_Id",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Match_Type": {
+          "name": "Match_Type",
+          "type": "varchar(15)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Match_Number": {
+          "name": "Match_Number",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Source": {
+          "name": "Source",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Team_Number": {
+          "name": "Team_Number",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Scout_Name": {
+          "name": "Scout_Name",
+          "type": "varchar(40)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Alliance_Color": {
+          "name": "Alliance_Color",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Alliance_Position": {
+          "name": "Alliance_Position",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Driver_Ability": {
+          "name": "Driver_Ability",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Source_Time": {
+          "name": "Source_Time",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Break": {
+          "name": "Break",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Primary_Role": {
+          "name": "Primary_Role",
+          "type": "varchar(30)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Net_Shots_Made": {
+          "name": "Net_Shots_Made",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Net_Shots_Missed": {
+          "name": "Net_Shots_Missed",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Other_Notes": {
+          "name": "Other_Notes",
+          "type": "varchar(500)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Created_At": {
+          "name": "Created_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "Updated_At": {
+          "name": "Updated_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "Synced_At": {
+          "name": "Synced_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "idx_u_leader2025Data": {
+          "name": "idx_u_leader2025Data",
+          "columns": [
+            {
+              "expression": "Event_Id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Match_Type",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Match_Number",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Source",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Team_Number",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Scout_Name",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Alliance_Color",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Alliance_Position",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "Leader2025Data_Event_Id_Events_Event_Id_fk": {
+          "name": "Leader2025Data_Event_Id_Events_Event_Id_fk",
+          "tableFrom": "Leader2025Data",
+          "tableTo": "Events",
+          "columnsFrom": [
+            "Event_Id"
+          ],
+          "columnsTo": [
+            "Event_Id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.Match2024Data": {
+      "name": "Match2024Data",
+      "schema": "",
+      "columns": {
+        "Event_Id": {
+          "name": "Event_Id",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Match_Type": {
+          "name": "Match_Type",
+          "type": "varchar(15)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Match_Number": {
+          "name": "Match_Number",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Source": {
+          "name": "Source",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Team_Number": {
+          "name": "Team_Number",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Scout_Name": {
+          "name": "Scout_Name",
+          "type": "varchar(40)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Alliance_Color": {
+          "name": "Alliance_Color",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Robot_Leave": {
+          "name": "Robot_Leave",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_Start_Loc": {
+          "name": "Auto_Start_Loc",
+          "type": "varchar(15)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_Notes_Intook_1": {
+          "name": "Auto_Notes_Intook_1",
+          "type": "varchar(2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Auto_Notes_Intook_2": {
+          "name": "Auto_Notes_Intook_2",
+          "type": "varchar(2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Auto_Notes_Intook_3": {
+          "name": "Auto_Notes_Intook_3",
+          "type": "varchar(2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Auto_Notes_Intook_4": {
+          "name": "Auto_Notes_Intook_4",
+          "type": "varchar(2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Auto_Notes_Intook_5": {
+          "name": "Auto_Notes_Intook_5",
+          "type": "varchar(2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Auto_Notes_Intook_6": {
+          "name": "Auto_Notes_Intook_6",
+          "type": "varchar(2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Auto_Notes_Intook_7": {
+          "name": "Auto_Notes_Intook_7",
+          "type": "varchar(2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Auto_Notes_Intook_8": {
+          "name": "Auto_Notes_Intook_8",
+          "type": "varchar(2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Auto_Notes_Intook_9": {
+          "name": "Auto_Notes_Intook_9",
+          "type": "varchar(2)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Auto_Amp_Scored": {
+          "name": "Auto_Amp_Scored",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_Speaker_Scored": {
+          "name": "Auto_Speaker_Scored",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_Amp_Missed": {
+          "name": "Auto_Amp_Missed",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_Speaker_Missed": {
+          "name": "Auto_Speaker_Missed",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Tele_Amp_Scored": {
+          "name": "Tele_Amp_Scored",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Tele_Speaker_Scored": {
+          "name": "Tele_Speaker_Scored",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Tele_Amp_Missed": {
+          "name": "Tele_Amp_Missed",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Tele_Speaker_Missed": {
+          "name": "Tele_Speaker_Missed",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Climb_State": {
+          "name": "Climb_State",
+          "type": "varchar(25)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Ferry": {
+          "name": "Ferry",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Trap": {
+          "name": "Trap",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Harmony": {
+          "name": "Harmony",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Bet_Color": {
+          "name": "Bet_Color",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Bet_Amount": {
+          "name": "Bet_Amount",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Over_Under": {
+          "name": "Over_Under",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Created_At": {
+          "name": "Created_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "Updated_At": {
+          "name": "Updated_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "Synced_At": {
+          "name": "Synced_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "idx_u_match2024Data": {
+          "name": "idx_u_match2024Data",
+          "columns": [
+            {
+              "expression": "Event_Id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Match_Type",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Match_Number",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Source",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Team_Number",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Scout_Name",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "Match2024Data_Event_Id_Events_Event_Id_fk": {
+          "name": "Match2024Data_Event_Id_Events_Event_Id_fk",
+          "tableFrom": "Match2024Data",
+          "tableTo": "Events",
+          "columnsFrom": [
+            "Event_Id"
+          ],
+          "columnsTo": [
+            "Event_Id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.Match2025Data": {
+      "name": "Match2025Data",
+      "schema": "",
+      "columns": {
+        "Event_Id": {
+          "name": "Event_Id",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Match_Type": {
+          "name": "Match_Type",
+          "type": "varchar(15)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Match_Number": {
+          "name": "Match_Number",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Source": {
+          "name": "Source",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Team_Number": {
+          "name": "Team_Number",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Scout_Name": {
+          "name": "Scout_Name",
+          "type": "varchar(40)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Alliance_Color": {
+          "name": "Alliance_Color",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Alliance_Position": {
+          "name": "Alliance_Position",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_Start_Loc": {
+          "name": "Auto_Start_Loc",
+          "type": "varchar(14)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_Reef_L1": {
+          "name": "Auto_Reef_L1",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Auto_Reef_L2": {
+          "name": "Auto_Reef_L2",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Auto_Reef_L3": {
+          "name": "Auto_Reef_L3",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Auto_Reef_L4": {
+          "name": "Auto_Reef_L4",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Coral_A": {
+          "name": "Coral_A",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Coral_B": {
+          "name": "Coral_B",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Coral_C": {
+          "name": "Coral_C",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Coral_D": {
+          "name": "Coral_D",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Coral_E": {
+          "name": "Coral_E",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Coral_F": {
+          "name": "Coral_F",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Leave": {
+          "name": "Leave",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Auto_Net": {
+          "name": "Auto_Net",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Auto_Processor": {
+          "name": "Auto_Processor",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Teleop_Reef_L1": {
+          "name": "Teleop_Reef_L1",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Teleop_Reef_L2": {
+          "name": "Teleop_Reef_L2",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Teleop_Reef_L3": {
+          "name": "Teleop_Reef_L3",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Teleop_Reef_L4": {
+          "name": "Teleop_Reef_L4",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Teleop_Processor": {
+          "name": "Teleop_Processor",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Teleop_Net": {
+          "name": "Teleop_Net",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Teleop_Algae_Removed": {
+          "name": "Teleop_Algae_Removed",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Endgame": {
+          "name": "Endgame",
+          "type": "varchar(7)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Bet_Amount": {
+          "name": "Bet_Amount",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Bet_Color": {
+          "name": "Bet_Color",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Auto_Color": {
+          "name": "Auto_Color",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Winner_Score_Over_Under": {
+          "name": "Winner_Score_Over_Under",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Over_Under": {
+          "name": "Over_Under",
+          "type": "varchar(5)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Created_At": {
+          "name": "Created_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "Updated_At": {
+          "name": "Updated_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "Synced_At": {
+          "name": "Synced_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "idx_u_match2025Data": {
+          "name": "idx_u_match2025Data",
+          "columns": [
+            {
+              "expression": "Event_Id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Match_Type",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Match_Number",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Source",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Team_Number",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Scout_Name",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "Match2025Data_Event_Id_Events_Event_Id_fk": {
+          "name": "Match2025Data_Event_Id_Events_Event_Id_fk",
+          "tableFrom": "Match2025Data",
+          "tableTo": "Events",
+          "columnsFrom": [
+            "Event_Id"
+          ],
+          "columnsTo": [
+            "Event_Id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.PickList2025": {
+      "name": "PickList2025",
+      "schema": "",
+      "columns": {
+        "Event_Id": {
+          "name": "Event_Id",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Team_Number": {
+          "name": "Team_Number",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Pick_Index": {
+          "name": "Pick_Index",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Alliance_Selected": {
+          "name": "Alliance_Selected",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "default": false
+        },
+        "Created_At": {
+          "name": "Created_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "Updated_At": {
+          "name": "Updated_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "Synced_At": {
+          "name": "Synced_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "idx_u_picklist2025": {
+          "name": "idx_u_picklist2025",
+          "columns": [
+            {
+              "expression": "Event_Id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Team_Number",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "PickList2025_Event_Id_Events_Event_Id_fk": {
+          "name": "PickList2025_Event_Id_Events_Event_Id_fk",
+          "tableFrom": "PickList2025",
+          "tableTo": "Events",
+          "columnsFrom": [
+            "Event_Id"
+          ],
+          "columnsTo": [
+            "Event_Id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.Pit2024Data": {
+      "name": "Pit2024Data",
+      "schema": "",
+      "columns": {
+        "Event_Id": {
+          "name": "Event_Id",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Source": {
+          "name": "Source",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Team_Number": {
+          "name": "Team_Number",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Scout_Name": {
+          "name": "Scout_Name",
+          "type": "varchar(40)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Drive_Train": {
+          "name": "Drive_Train",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Robot_Width": {
+          "name": "Robot_Width",
+          "type": "numeric(10, 3)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Robot_Length": {
+          "name": "Robot_Length",
+          "type": "numeric(10, 3)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Robot_Height": {
+          "name": "Robot_Height",
+          "type": "numeric(10, 3)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Human_Player": {
+          "name": "Human_Player",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Can_Leave": {
+          "name": "Can_Leave",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Can_Auto_Amp": {
+          "name": "Can_Auto_Amp",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Can_Auto_Speaker": {
+          "name": "Can_Auto_Speaker",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Contest_Middle": {
+          "name": "Contest_Middle",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Max_Notes_Auto": {
+          "name": "Max_Notes_Auto",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Intake_Location": {
+          "name": "Intake_Location",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Scoring_Pref": {
+          "name": "Scoring_Pref",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Can_Tele_Amp": {
+          "name": "Can_Tele_Amp",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Can_Tele_Speaker": {
+          "name": "Can_Tele_Speaker",
+          "type": "integer",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Climb_Location": {
+          "name": "Climb_Location",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Climb_Height": {
+          "name": "Climb_Height",
+          "type": "numeric(10, 3)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Can_Trap": {
+          "name": "Can_Trap",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Notable_Feat": {
+          "name": "Notable_Feat",
+          "type": "varchar(500)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Created_At": {
+          "name": "Created_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "Updated_At": {
+          "name": "Updated_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "Synced_At": {
+          "name": "Synced_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "idx_u_pit2024Data": {
+          "name": "idx_u_pit2024Data",
+          "columns": [
+            {
+              "expression": "Event_Id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Source",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Team_Number",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Scout_Name",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "Pit2024Data_Event_Id_Events_Event_Id_fk": {
+          "name": "Pit2024Data_Event_Id_Events_Event_Id_fk",
+          "tableFrom": "Pit2024Data",
+          "tableTo": "Events",
+          "columnsFrom": [
+            "Event_Id"
+          ],
+          "columnsTo": [
+            "Event_Id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.Pit2025Data": {
+      "name": "Pit2025Data",
+      "schema": "",
+      "columns": {
+        "Event_Id": {
+          "name": "Event_Id",
+          "type": "varchar(20)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Source": {
+          "name": "Source",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Team_Number": {
+          "name": "Team_Number",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Scout_Name": {
+          "name": "Scout_Name",
+          "type": "varchar(40)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Drive_Train": {
+          "name": "Drive_Train",
+          "type": "varchar(7)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Robot_Width": {
+          "name": "Robot_Width",
+          "type": "numeric(10, 3)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Robot_Length": {
+          "name": "Robot_Length",
+          "type": "numeric(10, 3)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Human_Player_Loc": {
+          "name": "Human_Player_Loc",
+          "type": "varchar(15)",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Intake_Ground_Algae": {
+          "name": "Intake_Ground_Algae",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Intake_Reef_Algae": {
+          "name": "Intake_Reef_Algae",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Intake_Reef_Coral": {
+          "name": "Intake_Reef_Coral",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Intake_Ground_Coral": {
+          "name": "Intake_Ground_Coral",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Score_Teleop_L1": {
+          "name": "Score_Teleop_L1",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Score_Teleop_L2": {
+          "name": "Score_Teleop_L2",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Score_Teleop_L3": {
+          "name": "Score_Teleop_L3",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Score_Teleop_L4": {
+          "name": "Score_Teleop_L4",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Score_Teleop_Processor": {
+          "name": "Score_Teleop_Processor",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Score_Teleop_Net": {
+          "name": "Score_Teleop_Net",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Score_Auto_L1": {
+          "name": "Score_Auto_L1",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Score_Auto_L2": {
+          "name": "Score_Auto_L2",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Score_Auto_L3": {
+          "name": "Score_Auto_L3",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Score_Auto_L4": {
+          "name": "Score_Auto_L4",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Score_Auto_Processor": {
+          "name": "Score_Auto_Processor",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Score_Auto_Net": {
+          "name": "Score_Auto_Net",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Pref_Start_Center": {
+          "name": "Pref_Start_Center",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Pref_Start_Ally_HP": {
+          "name": "Pref_Start_Ally_HP",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Pref_Start_Opp_HP": {
+          "name": "Pref_Start_Opp_HP",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Pref_Start_None": {
+          "name": "Pref_Start_None",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Auto_Intake_HP_Coral": {
+          "name": "Auto_Intake_HP_Coral",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Auto_Intake_Ground_Coral": {
+          "name": "Auto_Intake_Ground_Coral",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Auto_Max_Game_Pieces": {
+          "name": "Auto_Max_Game_Pieces",
+          "type": "smallint",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Can_Shallow_Climb": {
+          "name": "Can_Shallow_Climb",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Can_Deep_Climb": {
+          "name": "Can_Deep_Climb",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "No_Climb": {
+          "name": "No_Climb",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "Notable_Features": {
+          "name": "Notable_Features",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "Created_At": {
+          "name": "Created_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "Updated_At": {
+          "name": "Updated_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        },
+        "Synced_At": {
+          "name": "Synced_At",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false
+        }
+      },
+      "indexes": {
+        "idx_u_pit2025Data": {
+          "name": "idx_u_pit2025Data",
+          "columns": [
+            {
+              "expression": "Event_Id",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Source",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Team_Number",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            },
+            {
+              "expression": "Scout_Name",
+              "isExpression": false,
+              "asc": true,
+              "nulls": "last"
+            }
+          ],
+          "isUnique": true,
+          "concurrently": false,
+          "method": "btree",
+          "with": {}
+        }
+      },
+      "foreignKeys": {
+        "Pit2025Data_Event_Id_Events_Event_Id_fk": {
+          "name": "Pit2025Data_Event_Id_Events_Event_Id_fk",
+          "tableFrom": "Pit2025Data",
+          "tableTo": "Events",
+          "columnsFrom": [
+            "Event_Id"
+          ],
+          "columnsTo": [
+            "Event_Id"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.Seasons": {
+      "name": "Seasons",
+      "schema": "",
+      "columns": {
+        "Season": {
+          "name": "Season",
+          "type": "smallint",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "Season_Name": {
+          "name": "Season_Name",
+          "type": "varchar(200)",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    }
+  },
+  "enums": {},
+  "schemas": {},
+  "sequences": {},
+  "roles": {},
+  "policies": {},
+  "views": {},
+  "_meta": {
+    "columns": {},
+    "schemas": {},
+    "tables": {}
+  }
+}

@@ -1,0 +1,1 @@
+docker build -t daisy-flutter-base:3.27.2 -f Dockerfile-flutter-base .

@@ -1,0 +1,38 @@
+export type TeamMatch2025Data = {
+  eventId: string;
+  matchType: string;
+  matchNumber: number;
+  source: string | null;
+  teamNumber: number;
+  scoutName: string | null;
+  allianceColor: string | null;
+  alliancePosition: number | null;
+
+  autoStartLoc: string | null;
+  autoReefL1: number | null;
+  autoReefL2: number | null;
+  autoReefL3: number | null;
+  autoReefL4: number | null;
+  coralA: number | null;
+  coralB: number | null;
+  coralC: number | null;
+  coralD: number | null;
+  coralE: number | null;
+  coralF: number | null;
+  leave: string | null;
+  autoNet: number | null;
+  autoProcessor: number | null;
+  teleopReefL1: number | null;
+  teleopReefL2: number | null;
+  teleopReefL3: number | null;
+  teleopReefL4: number | null;
+  teleopProcessor: number | null;
+  teleopNet: number | null;
+  teleopAlgaeRemoved: number | null;
+  endgame: string | null;
+  driverAbility: number | null;
+  operability: string | null;
+  role: string | null;
+  hpNetMissed: number | null;
+  hpNetMade: number | null;
+};

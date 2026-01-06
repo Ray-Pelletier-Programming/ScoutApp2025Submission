@@ -1,0 +1,2 @@
+export PGPASSWORD=$3
+psql --dbname=neondb --username=neondb_owner -c "COPY (SELECT \"Event_Id\",\"Match_Type\",\"Match_Number\",\"Source\",\"Team_Number\",\"Alliance_Color\",\"Alliance_Position\",\"Driver_Ability\",\"Break\",\"Primary_Role\",\"Net_Shots_Made\",\"Net_Shots_Missed\",\"Other_Notes\" FROM \"Leader2025Data\" where \"Event_Id\" = '$1$2') TO stdout DELIMITER ',' CSV HEADER" > /transfer-out/leader.share.csv

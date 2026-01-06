@@ -1,0 +1,1 @@
+enum FieldSide { table , nontable }

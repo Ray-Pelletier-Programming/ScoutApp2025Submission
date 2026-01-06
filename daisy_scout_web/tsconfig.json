@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "ES2017", //ES2017 for dbmigrate; otherwise ES5
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "app/ui/context/settings-context",
+    "app/ui/table.js",
+    "app/ui/table.js",
+    "app/(admin)/pick-list/2025/new-pick-list-2025-table.js",
+    "app/(admin)/test/page.js"
+  ],
+  "exclude": ["node_modules"]
+}

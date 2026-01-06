@@ -1,0 +1,1 @@
+enum ScannerAction { scan, sync }

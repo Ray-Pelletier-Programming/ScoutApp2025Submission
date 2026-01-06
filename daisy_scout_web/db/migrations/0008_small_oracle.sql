@@ -1,0 +1,1 @@
+ALTER TABLE "Match2025Data" ADD COLUMN "Teleop_Algae_Removed" smallint;

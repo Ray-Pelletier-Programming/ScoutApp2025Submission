@@ -1,0 +1,1 @@
+ALTER TABLE "Leader2025Data" ALTER COLUMN "Primary_Role" SET DATA TYPE varchar(20);

@@ -1,0 +1,1 @@
+docker build -t daisy-neon-cloud-psql:1.0.0 -f daisy_scout_web\db\Dockerfile-Neon-Cloud .
